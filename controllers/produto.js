@@ -43,13 +43,13 @@ produto.delete("/del/:id_produto", function(req, res){
             res.send(erro)
         }
         else{
-            res.send("Nota deletada com sucesso")
-            database.run(`delete from produto where id_produto = "${id_produto}"`, function(erro){
+            database.run(`delete from produto where id_produto = "${id_produto}"`, 
+            function(erro){
                 if(erro){
                     res.send(erro)
                 }
                 else{
-                    res.send("Produto deletado com sucesso")
+                    res.send("Nota e produto deletados com sucesso")
                 }
             })
         }
